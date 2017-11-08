@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+.container{
+    max-width: 500px;
+    margin: 100px auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:12px;
+}
+.row{
+    width: 100%;
+    margin-bottom: 75px;
+    position: relative;
+}
+
+ul{
+    list-style: none;
+}
+img{
+    display: block;
+    margin-right: 20px;
+    float: left;
+}
+.price{
+    position: absolute;
+    right: 0;
+    top:50px;
+}
+a{
+    text-decoration: none;
+    color: rgb(25, 96, 124);
+    font-style: italic;
+    font-size: 1em;
+}
