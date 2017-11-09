@@ -1,7 +1,10 @@
-<div class="row">
+<!-- <div class="row">
   <img src="{{product.img}}" width="100">
   <h2>{{product.title}}</h2>
   <p><span>{{product.SKU}}</span></p>
   <a href="#">{{product.departement}}</a>
   <p class="price"><strong>${{product.price}}</strong></p>
+</div> -->
+<div class="ui items">
+  <app-product-row *ngFor="let product of products" [product]="product" (click)="clicked(product)" ></app-product-row>
 </div>

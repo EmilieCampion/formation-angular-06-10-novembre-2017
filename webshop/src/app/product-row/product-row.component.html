@@ -1,0 +1,21 @@
+<div class="content">
+  
+  <div class="header"><h1>{{product.title}}</h1></div>
+  <div class="clearfix">
+    <div class="img">
+      <app-product-image [product]="product"></app-product-image>
+    </div>
+    <div class="meta">
+      <div class="product-sku">
+        SKU {{product.SKU}}
+      </div>
+      <div class="description">
+        {{product.description}}
+        <app-product-departement [product]="product"></app-product-departement>
+      </div>
+      <div class="price">
+        {{product.price}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,8 +11,10 @@ export class Article {
     }
     votesUp() {
         this.votes++;
+        return false;
     }
     votesDown() {
         this.votes--;
+        return false;
     }
 }

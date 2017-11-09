@@ -1,0 +1,24 @@
+<div *ngIf="isLoggedIn" style="width:500px; margin:30px auto;">
+  <h1>OOOOOOh Yeah !</h1>
+  <iframe src="https://giphy.com/embed/MPgq7Ep6WDS5a" width="480" height="259" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/tywin-lannister-MPgq7Ep6WDS5a"></a></p>
+</div>
+<div class="ui raides segment" *ngIf="!isLoggedIn">
+    <h2 class="ui header">Login Form</h2>
+    <form class="ui form" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" [class.error]="!myForm.valid && myForm.touched">
+      <div class="field">
+        <label for="loginInput">Login :</label>
+        <input type="text" id="loginInput" placeholder="Login" name="login" [formControl]="myForm.controls['login']" >
+        <div class="ui message" *ngIf="!login.valid && login.touched">Login is non existant</div>
+        <div class="ui message" *ngIf="login.hasError('minlength')">Login is too short</div>
+        <div class="ui message" *ngIf="login.hasError('maxlength')">Login is too long</div>
+      </div>
+      <div class="field">
+        <label for="passwordInput">Password :</label>
+        <input type="password" id="passwordInput" placeholder="Password" name="password" [formControl]="myForm.controls['password']">
+        <div *ngIf="!password.valid && password.touched" class="ui error message ">Password is invalid</div>
+        <div *ngIf="password.hasError('invalidPassword')" class="ui error message ">Password must follow the rules</div>
+      </div>
+      <div class="ui error message" *ngIf="!myForm.valid">Form is Invalid</div>
+      <button type="submit" class="ui button">Submit</button>
+    </form>
+  </div>  

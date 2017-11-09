@@ -8,21 +8,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  product: Product[] = [];
+  products: Product[];
+  kartProducts: Product[];
 
     constructor() {
-      this
-        .product.
+      this.products = [
         // tslint:disable-next-line:max-line-length
-        push(new Product ('Black Running Shoes', '#smth', 109.99, 'shoes', 'https://images.sportsdirect.com/images/products/21027940_l.jpg'));
-      this
-        .product
+        new Product ('Black Running Shoes', '#smth', 109.99, ['shoes', 'sport', 'blah'], '../assets/images/products/black-shoes.jpg', 'My awesome description'),
+        new Product ('Blue Jacket', '#smth', 250.39, ['sportswear', 'sport', 'blah'], '../assets/images/products/blue-jacket.jpg', 'My awesome description'),
         // tslint:disable-next-line:max-line-length
-        .push(new Product ('Blue Jacket', '#smth', 250.39, 'sportswear', 'https://s1.thcdn.com/productimg/0/600/600/57/11024957-1416937992-180397.jpg'));
-      this.product.push(new Product ('Black Cap', '#smth', 29.99, 'cap', 'https://images.sportsdirect.com/images/products/39101803_l.jpg'));
+        new Product ('Black Cap', '#smth', 29.99, ['cap', 'sport', 'blah'], '../../assets/images/products/black-hat.jpg', 'My awesome description'),
+      ];
+      this.kartProducts = [];
     }
-
-    Product(): Product[] {
-      return this.product;
-    }
+    productChanged(product: Product): void {
+      this.addToKart(product);
+      }
+      addToKart(product: Product): void {
+        this.kartProducts.push(product);
+      }
 }

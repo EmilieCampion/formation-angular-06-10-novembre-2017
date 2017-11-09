@@ -1,5 +1,5 @@
 import { Product } from './product.model';
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-product',
@@ -9,9 +9,15 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  @Input() product: Product;
-
-  constructor() { }
+  @Input() products: Product[];
+  @Output() onProductSelected: EventEmitter<Product>;
+  constructor() {
+    this.onProductSelected = new EventEmitter();
+   }
+  clicked(product) {
+    console.log('internal list ', product);
+    this.onProductSelected.emit(product);
+  }
 
   ngOnInit() {
   }
