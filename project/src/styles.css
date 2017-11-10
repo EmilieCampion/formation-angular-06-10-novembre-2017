@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Play');
+
+*,*:before, *:after{
+    padding:0; margin:0;
+}
+
+.container{
+    font-family: 'Play',Verdana, Geneva, Tahoma, sans-serif;
+    background: url('../src/assets/img/bg-ptfl-02.jpg') fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    height: 100vh;
+}
+
+.content{
+    max-width:800px;
+    margin:0 auto;
+    padding-top: 80px; 
+    position: relative;
+}
+.character{
+    clear: both;
+    position: absolute;
+    opacity:1;
+    transition: opacity .2s;
+}
+.ability{
+    width: 50%;
+    float: left;
+    padding-top: 100px;
+}
+.ability h3{
+    padding-bottom: 15px;
+}
+.character img{
+    display: block;
+    width: 45%;
+    float: left;
+}
+ul{
+    list-style: none;
+}
+.miniature a{
+    box-sizing: border-box;
+    margin: 15px;
+    display: inline-block;
+    border: 2px goldenrod outset;
+    width: 75px;
+    height: 75px;
+    background: white;
+    overflow: hidden;
+}
+.miniature a:hover{
+    border: 3px goldenrod inset;
+}
+
+.miniature li{
+    padding: 5px;
+}
+.miniature li img{
+    width: 100%;
+}
+

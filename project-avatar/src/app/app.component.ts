@@ -23,8 +23,8 @@ export class AppComponent {
     }
     productChanged(product: Product): void {
       this.addToKart(product);
-    }
-    addToKart(product: Product): void {
-      this.kartProducts.push(product);
-    }
+      }
+      addToKart(product: Product): void {
+        this.kartProducts.push(product);
+      }
 }
